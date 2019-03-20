@@ -8,38 +8,26 @@
         <b-col>
            <ul class="categories_ul">
             <router-link to="/"><li :class="{ active_color: active_li === 'all' }">All</li></router-link>
-            <router-link to="/category/cricket"><li :class="{ active_color: active_li === 'Cricket' }">Cricket</li></router-link>
-            <router-link to="/category/football"><li :class="{ active_color: active_li === 'Football' }">Football</li></router-link>
-            <router-link to="/category/hockey"><li :class="{ active_color: active_li === 'Hockey' }">Hockey</li></router-link>
-            <router-link to="/category/kabaddi"><li :class="{ active_color: active_li === 'Kabaddi' }">Kabaddi</li></router-link>
-            <router-link to="/category/badminton"><li :class="{ active_color: active_li === 'Badminton' }">Badminton</li></router-link>
+            <router-link to="/category/cricket"><li :class="{ active_color: active_li === 'cricket' }">Cricket</li></router-link>
+            <router-link to="/category/football"><li :class="{ active_color: active_li === 'football' }">Football</li></router-link>
+            <router-link to="/category/hockey"><li :class="{ active_color: active_li === 'hockey' }">Hockey</li></router-link>
+            <router-link to="/category/kabaddi"><li :class="{ active_color: active_li === 'kabaddi' }">Kabaddi</li></router-link>
+            <router-link to="/category/badminton"><li :class="{ active_color: active_li === 'badminton' }">Badminton</li></router-link>
            </ul>
         </b-col>
-        <b-col cols="9">
-          <h4>{{active_li === '' ? 'Sports Article' : active_li}} <span class="count">Articles : {{ articles.length }}</span></h4>
-          <br/>
+        <b-col cols="9"><h4>{{active_li === '' ? 'Sports Article' : active_li}}</h4><br/>
         <div v-for="article in articles">
           <div>
           <b-card>
-          <span class="delete_icon" @click="deleteArticle(article._id)">X</span>
           <b-card :img-src="article.image" img-width="200px" img-height="150px" class="image" img-alt="Card image" img-right>
-          <b-card-text class="font-weight-bold">
-            <router-link :to="'/details/'+ article._id">{{article.title}}
-            </router-link>
-          </b-card-text>
-          <b-card-text class="description">{{article.description}}
-          </b-card-text>
-          <b-card-text class="font-italic">{{article.category}}
-          </b-card-text>
+          <b-card-text class="font-weight-bold"><router-link :to="'/details/'+ article._id">{{article.title}}</router-link></b-card-text>
+          <b-card-text class="description">{{article.description}}</b-card-text>
+          <b-card-text class="font-italic">{{article.category}}</b-card-text>
           </b-card>
           </b-card>
-          </div>        
+          </div>         
         </div>
-        <div v-if="articles.length === 0">
-        <p class="text-center">No Articles Available <br>
-        <router-link to="/create_article">Create Article</router-link></p>
-        </div>
-        </b-col>
+    </b-col>
       </b-row>
     </b-container>
  </div>
@@ -69,22 +57,6 @@ mounted () {
   	this.$store.dispatch('GET_ARTICLES')
   },
 methods:{
-      deleteArticle (id) {
-      let x = confirm("Are you sure you want to delete?");
-       if (x){
-      let data = { id: id }
-      this.$store.dispatch('DELETE_ARTICLE', data).then((res)=> {
-        if (res.status === "success") {
-          // this.$notify({
-          //      group: 'foo',
-          //      title: 'Delete message',
-          //      text: 'Deleted Successfully!'
-          //       });
-          this.$store.dispatch('GET_ARTICLES')
-        }
-      });
-    }
-  },
 /*  uploadImage(e){
                 const image = e.target.files[0];
                 const reader = new FileReader();
@@ -148,10 +120,7 @@ methods:{
       }
     },
     active_li () {
-      let string = this.$route.params.name;
-      if (string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-      }
+      return this.$route.params.name;
     }
   },
 }
@@ -190,13 +159,4 @@ router-link{
 .items{
   display:none;
 }
-.count{
-  float: right;
-}
-.delete_icon {
-  cursor: pointer;
-  float:right;
-  margin-top:-20px;
-  margin-right: -10px;
-  }
 </style>
