@@ -1,5 +1,5 @@
 <template>
- <div>
+<div>
   <br/>
   <div class="main_page">
     <b-container class="bv-example-row">
@@ -8,14 +8,20 @@
         <b-col>
            <ul class="categories_ul">
             <router-link to="/"><li :class="{ active_color: active_li === 'all' }">All</li></router-link>
-            <router-link to="/category/cricket"><li :class="{ active_color: active_li === 'cricket' }">Cricket</li></router-link>
-            <router-link to="/category/football"><li :class="{ active_color: active_li === 'football' }">Football</li></router-link>
-            <router-link to="/category/hockey"><li :class="{ active_color: active_li === 'hockey' }">Hockey</li></router-link>
-            <router-link to="/category/kabaddi"><li :class="{ active_color: active_li === 'kabaddi' }">Kabaddi</li></router-link>
+            <router-link to="/category/cricket"><li :class="{ active_color: active_li === 'cricket' }">Cricket</li>
+            </router-link>
+            <router-link to="/category/football"><li :class="{ active_color: active_li === 'football' }">Football</li>
+            </router-link>
+            <router-link to="/category/hockey"><li :class="{ active_color: active_li === 'hockey' }">Hockey</li>
+            </router-link>
+            <router-link to="/category/kabaddi"><li :class="{ active_color: active_li === 'kabaddi' }">Kabaddi</li>
+            </router-link>
             <router-link to="/category/badminton"><li :class="{ active_color: active_li === 'badminton' }">Badminton</li></router-link>
            </ul>
         </b-col>
-        <b-col cols="9"><h4>{{active_li === '' ? 'Sports Article' : active_li}}</h4><br/>
+        <b-col cols="9">
+          <h4>{{active_li === '' ? 'Sports Article' : active_li}}</h4>
+          <br/>
         <div v-for="article in articles">
           <div>
           <b-card>
@@ -27,10 +33,10 @@
           </b-card>
           </div>         
         </div>
-    </b-col>
+        </b-col>
       </b-row>
     </b-container>
- </div>
+  </div>
 </div>
 </template>
 
@@ -143,12 +149,9 @@ li{
 .active_color{
   font-weight:bold;
 }
-.active_color ::hover{
-  background-color: #6c757d;
-}
-router-link{
+/*router-link{
   text-decoration: none !important;
-}
+}*/
 .description{
   display:block;
   width: 500px;

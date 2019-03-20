@@ -8,7 +8,7 @@
       <router-link to="/">Back to Home</router-link>
     </p>
     <b-form @submit.prevent="onSubmit" class="form"> 
-		<label>Title:</label>
+		  <label>Title:</label>
       <b-form-input placeholder="Title" type="text" v-model="title" :class="{ red_color: title_err }" /><br/>
       <label>Description:</label>
       <b-form-textarea placeholder="Please Enter Descrition"
