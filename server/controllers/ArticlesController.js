@@ -48,4 +48,20 @@ module.exports={
       }
     })
   },
+  async delete (req, res) {
+    console.log('delete article by id')
+    await Article.deleteOne({ _id: req.body.id }, (err, data) => {
+      if (!err) {
+        res.json({
+          status: "success",
+          message: "Todo deleted successfully"
+        })
+      } else {
+        res.json({
+          status: "fail",
+          message: "Something went wrong"
+        })
+      }
+    })
+  },
 }

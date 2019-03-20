@@ -42,6 +42,7 @@ data () {
 	  		if (res.status === "success") {
 	  			this.article = res.data
 	  			this.items[1].text = res.data.title
+	  			res.data.category.charAt(0).toUpperCase() + res.data.category.slice(1);
 		  		}
 	  	})
 	},

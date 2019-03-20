@@ -2,7 +2,7 @@
   <div class="hello">
     <div>
   <b-navbar toggleable="lg" type="dark" variant="info">
-    <router-link to ="/"><b-navbar-brand class="app_name">Sports Article Blog</b-navbar-brand></router-link>
+    <router-link to="/"><b-navbar-brand class="app_name">Sports Article Blog</b-navbar-brand></router-link>
 
     <b-navbar-toggle target="nav_collapse" />
 

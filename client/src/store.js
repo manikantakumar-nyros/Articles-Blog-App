@@ -46,5 +46,11 @@ export default new Vuex.Store({
         return res.data
       });
     },
+    DELETE_ARTICLE : async (context,article) =>{
+      let uri = BASE_URL+'/delete_article/';
+      return await axios.post(uri, article).then((res) =>{
+        return res.data
+      });
+    },
   }
 })

@@ -25,10 +25,26 @@
           <b-col>
       		  <ul class="social">
             <b-card-text>
-      			<li><router-link to=""><img src="http://10.90.90.59/jquery/assets/images/twitter.png"></router-link></li>
-      			<li><router-link to=""><img src="http://10.90.90.59/jquery/assets/images/facebook.png"></router-link></li>
-      			<li><router-link to=""><img src="http://10.90.90.59/jquery/assets/images/youtube.png"></router-link></li>
-      			<li><router-link to=""><img src="http://10.90.90.59/jquery/assets/images/instagram.png"></router-link></li>
+      			<li>
+              <router-link to="">
+                <img src="http://10.90.90.59/jquery/assets/images/twitter.png">
+              </router-link>
+            </li>
+      			<li>
+              <router-link to="">
+                <img src="http://10.90.90.59/jquery/assets/images/facebook.png">
+              </router-link>
+            </li>
+      			<li>
+              <router-link to="">
+              <img src="http://10.90.90.59/jquery/assets/images/youtube.png">
+              </router-link>
+            </li>
+      			<li>
+              <router-link to="">
+                <img src="http://10.90.90.59/jquery/assets/images/instagram.png">
+              </router-link>
+            </li>
              </b-card-text>
       		  </ul>
           </b-col>
